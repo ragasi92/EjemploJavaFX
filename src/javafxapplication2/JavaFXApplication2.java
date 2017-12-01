@@ -6,6 +6,8 @@
 package javafxapplication2;
 
 import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -24,7 +26,15 @@ public class JavaFXApplication2 extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        StringProperty pStPro = new SimpleStringProperty("String Property");
+        StringProperty sStPro = new SimpleStringProperty("1");
+        System.out.println(sStPro.get());
+        sStPro.bindBidirectional(pStPro);
+        pStPro.set("Cambio el primer string");
+        System.out.println(sStPro.get());
+        sStPro.set("segundo");
         TextArea txtA = new TextArea();
+        txtA.setText(pStPro.get());
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         /*btn.setOnAction(new EventHandler<ActionEvent>() {

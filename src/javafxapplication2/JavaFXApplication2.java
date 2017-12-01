@@ -11,7 +11,9 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -36,9 +38,10 @@ public class JavaFXApplication2 extends Application {
             txtA.setText("hola mundo");
         });
         
-        StackPane root = new StackPane();
+        VBox root = new VBox();
         root.getChildren().add(txtA);
         root.getChildren().add(btn);
+        root.setStyle("-fx-background:#222;");
         
         
         Scene scene = new Scene(root, 300, 250);
